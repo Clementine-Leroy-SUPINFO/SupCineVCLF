@@ -1,3 +1,40 @@
-/* region General */
+/* #region *** GENERAL *** */
 
-/* endregion General */
+.container {
+    padding-inline: 2rem;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: start;
+    align-self: start;
+    align-items: flex-start;
+}
+
+@media screen and (min-width: 792px) {
+    .container {
+        padding-inline: 8rem;
+        padding-block: 2rem;
+    }
+}
+
+/* #region *** HEADER *** */
+
+/* #endregion *** HEADER *** */
+
+/* #region *** FOOTER *** */
+
+/* #endregion *** FOOTER *** */
+
+/* #endregion *** GENERAL *** */
+
+/* #region *** Page : INDEX *** */
+
+/* #endregion *** Page : INDEX *** */
+
+/* #region *** Page : SEARCH *** */
+
+/* #endregion *** Page : SEARCH *** */
+
+/* #region *** Page : MOVIE *** */
+
+/* #endregion Page : MOVIE *** */
