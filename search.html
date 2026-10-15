@@ -10,39 +10,27 @@
 <body>
     <header id="header"></header>
     <main>
-        <section>
-            <div class="container" >
+        <section class="container">
                 <h1>Rechercher un film</h1>
 
-                <div class="search-container">
-                    <label for="searchbar">Entrer le titre du film recherché</label>
-                    <input id="searchbar" type="search" placeholder="Guardians of the Galaxy" aria-label="Rechercher un film" />
+                <div class="containerSearch">
+                    <label for="searchBar">Entrer le titre du film recherché</label>
+                    <input id="searchBar" type="search" placeholder="Guardians of the Galaxy" aria-label="Rechercher un film" />
                 </div>
+            <ul>
+                <li data-movieCardContainer></li>
+            </ul>
 
-                <div class="results-container">
-                    <div class="movie-card">
-                        <div class="poster">img</div>
-                        <div class="header">titre</div>
-                        <div class="body">info</div>
+            <template>
+                    <div class="movieCard">
+                        <div class="posterCard"></div>
+                        <div class="headerCard"></div>
+                        <div class="bodyCard"></div>
                     </div>
-                    <div class="movie-card">
-                        <div class="poster">img</div>
-                        <div class="header">titre</div>
-                        <div class="body">info</div>
-                    </div>
-                    <div class="movie-card">
-                        <div class="poster">img</div>
-                        <div class="header">titre</div>
-                        <div class="body">info</div>
-                    </div>
-
-                </div>
+            </template>
 
 
 
-
-
-            </div>
         </section>
 
 

@@ -85,6 +85,36 @@ body {
 
 /* #region *** Page : SEARCH *** */
 
+#searchBar {
+    border-radius: 5em;
+}
+
+.containerResults {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+}
+
+.movieCard {
+    border : 1px solid deeppink;
+}
+
+.posterCard {
+    border : 10px solid pink;
+}
+
+.headerCard {
+    border : 1px solid pink;
+    color : blue;
+}
+
+.bodyCard {
+    border : 1px solid pink;
+}
+
+.hide {
+    display: none;
+}
+
 /* #endregion *** Page : SEARCH *** */
 
 /* #region *** Page : MOVIE *** */
