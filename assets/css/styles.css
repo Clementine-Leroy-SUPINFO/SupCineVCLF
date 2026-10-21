@@ -114,7 +114,7 @@ button:hover {
 }
 
 .headerNav a:hover, .headerNav a:focus, footer a:hover, footer a:focus {
-    text-decoration: underline;
+    text-decoration: underline deeppink;
 }
 
 footer p {
