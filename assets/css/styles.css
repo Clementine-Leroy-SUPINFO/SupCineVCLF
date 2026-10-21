@@ -27,7 +27,7 @@ body {
 
 /* #region *** HEADER *** */
 
-.headerNav {
+.headerNav, footer {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -39,7 +39,7 @@ body {
     order: -1;
 }
 
-.headerNav a {
+.headerNav a, footer a {
     display: flex;
     height: fit-content;
     padding: 0.1rem;
@@ -48,12 +48,16 @@ body {
     text-transform: uppercase;
 }
 
-.headerNav a:hover, .headerNav a:focus {
+.headerNav a:hover, .headerNav a:focus, footer a:hover, footer a:focus {
     text-decoration: underline;
 }
 
+footer p {
+    text-align: center;
+}
+
 @media screen and (min-width: 792px) {
-    .headerNav {
+    .headerNav, footer {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
     }
@@ -72,10 +76,6 @@ body {
 }
 
 /* #endregion *** HEADER *** */
-
-/* #region *** FOOTER *** */
-
-/* #endregion *** FOOTER *** */
 
 /* #endregion *** GENERAL *** */
 
