@@ -18,6 +18,10 @@ body {
     align-items: flex-start;
 }
 
+.listCard {
+    list-style-type: none
+}
+
 @media screen and (min-width: 792px) {
     .container {
         padding-inline: 8rem;
@@ -73,15 +77,20 @@ body {
 
 /* #endregion *** HEADER *** */
 
+
 /* #region *** FOOTER *** */
 
 /* #endregion *** FOOTER *** */
 
+
 /* #endregion *** GENERAL *** */
+
 
 /* #region *** Page : INDEX *** */
 
+
 /* #endregion *** Page : INDEX *** */
+
 
 /* #region *** Page : SEARCH *** */
 
@@ -116,6 +125,7 @@ body {
 }
 
 /* #endregion *** Page : SEARCH *** */
+
 
 /* #region *** Page : MOVIE *** */
 

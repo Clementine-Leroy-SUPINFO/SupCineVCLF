@@ -20,7 +20,7 @@ export function getMovie(id, plot = 'short') {
 
 const template = document.createElement("template");
 template.innerHTML = `
-<div class="movieCard">
+<li class="movieCard">
     <div class="posterCard"><img data-poster alt=""></div>
     <div class="headerCard"><a data-title></a></div>
     <div class="bodyCard">
@@ -32,7 +32,7 @@ template.innerHTML = `
             <li>Sortie : <span data-released></span></li>
         </ul>
     </div>
-</div>
+</li> 
 `;
 
 export function createMovieCard(movie, variant = "short") {
