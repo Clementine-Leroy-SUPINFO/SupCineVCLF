@@ -14,31 +14,22 @@
                 <h1>Rechercher un film</h1>
 
                 <div class="containerSearch">
-                    <label for="searchBar">Entrer le titre du film recherché</label>
-                    <input id="searchBar" type="search" placeholder="Guardians of the Galaxy" aria-label="Rechercher un film" />
+                    <form data-searchForm>
+                    <label for="searchBar">Entrer le titre du film recherché </label>
+                    <input id="searchBar" type="search" data-searchInput placeholder="Guardians of the Galaxy"/>
+                    </form>
                 </div>
-            <ul>
-                <li data-movieCardContainer></li>
-            </ul>
-
-            <template>
-                    <div class="movieCard">
-                        <div class="posterCard"></div>
-                        <div class="headerCard"></div>
-                        <div class="bodyCard"></div>
-                    </div>
-            </template>
-
-
-
+                <p data-resultCount></p>
+                <p data-message hidden></p>
+            <div data-movieCardContainer></div>
+            <button data-loadMore hidden>charger plus</button>
         </section>
-
 
         <!--Pour charger plus de résultats, copier le bouton de Victor pour plus de cohérence-->
     </main>
     <footer id="footer"></footer>
     <script src="assets/components/header.js"></script>
     <script src="assets/components/footer.js"></script>
-    <script src="assets/js/search.js"></script>
+    <script type="module" src="assets/js/search.js"></script>
 </body>
 </html>
