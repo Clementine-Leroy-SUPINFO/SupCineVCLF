@@ -18,6 +18,10 @@ body {
     align-items: flex-start;
 }
 
+h1 {
+    text-transform: uppercase;
+}
+
 ul {
     list-style-type: none;
 }
@@ -90,7 +94,7 @@ button:hover {
     }
 }
 
-/* #region *** HEADER *** */
+/* #region *** HEADER / FOOTER *** */
 
 .headerNav, footer {
     display: flex;
@@ -140,13 +144,9 @@ footer p {
     }
 }
 
-/* #endregion *** HEADER *** */
+/* #endregion *** HEADER / FOOTER  *** */
 
 /* #endregion *** GENERAL *** */
-
-/* #region *** Page : INDEX *** */
-
-/* #endregion *** Page : INDEX *** */
 
 /* #region *** Page : SEARCH *** */
 
