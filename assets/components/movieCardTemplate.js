@@ -10,8 +10,9 @@ async function request(params) {
     return data;
 }
 
-export function searchMovies(query, page = 1) {
-    return request (`s=${encodeURIComponent(query)}&page=${page}`);
+export function searchMovies(query, page = 1, signal, filters = {}) {
+    const params = new URLSearchParams({s: query, page, ...filters});
+    return request (params.toString(), signal);
 }
 
 export function getMovie(id, plot = 'short') {
@@ -20,19 +21,21 @@ export function getMovie(id, plot = 'short') {
 
 const template = document.createElement("template");
 template.innerHTML = `
-<div class="movieCard">
+<li class="movieCard">
     <div class="posterCard"><img data-poster alt=""></div>
-    <div class="headerCard"><a data-title></a></div>
-    <div class="bodyCard">
-        <p data-plot></p>
-        <ul data-only="full">
-            <li>Genres : <span data-genre></span></li>
-            <li>Acteurs : <span data-actors></span></li>
-            <li>Note : <span data-rating></span></li>
-            <li>Sortie : <span data-released></span></li>
-        </ul>
+    <div class="cardContent">
+        <h3 class="headerCard"><a data-title></a></h3>
+        <div class="bodyCard">
+            <p data-plot></p>
+            <ul data-only="full">
+                <li>Genres : <span data-genre></span></li>
+                <li>Acteurs : <span data-actors></span></li>
+                <li>Note : <span data-rating></span></li>
+                <li>Sortie : <span data-released></span></li>
+            </ul>
+        </div>
     </div>
-</div>
+</li>
 `;
 
 export function createMovieCard(movie, variant = "short") {
@@ -43,8 +46,12 @@ export function createMovieCard(movie, variant = "short") {
     });
     card.classList.add(`movieCard--${variant}`);
 
+    const noPoster = "assets/img/noPoster.jpg";
     const poster = card.querySelector("[data-poster]");
-    poster.src = movie.Poster !== "N/A" ? movie.Poster : "assets/img/noPoster.png";
+    poster.addEventListener("error", () => {
+        poster.src = noPoster;
+    }, {once: true});
+    poster.src = movie.Poster !== "N/A" ? movie.Poster : noPoster;
     poster.alt = `Affiche de ${movie.Title}`;
 
     const title = card.querySelector("[data-title]");
@@ -62,9 +69,9 @@ export function createMovieCard(movie, variant = "short") {
     return card;
 }
 
-export async function displayMovies(container,query, page = 1) {
-    const { Search, totalResults } = await searchMovies(query, page);
-    const movies = await Promise.all(Search.map(m => getMovie(m.imdbID, "short")));
+export async function displayMovies(container,query, page = 1, signal, filters = {}) {
+    const { Search, totalResults } = await searchMovies(query, page, signal, filters);
+    const movies = await Promise.all(Search.map(m => getMovie(m.imdbID, "short", signal)));
     movies.forEach(movie => container.append(createMovieCard(movie, "short")));
     return Number(totalResults);
     

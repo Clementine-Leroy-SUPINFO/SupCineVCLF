@@ -4,15 +4,16 @@ const container = document.querySelector("[data-movieCardContainer]");
 const loadMoreBtn = document.querySelector("[data-loadMore]");
 const message = document.querySelector("[data-message]");
 
-const query = "batman";
-const perPage = 10;
+const query = "love";
+const filters = {y : 2024, type : "movie"}
+const perPage = 5;
 let page = 1;
 
 async function load() {
     loadMoreBtn.disabled = true;
     showMessage(message,"");
     try {
-        const total = await displayMovies(container, query, page);
+        const total = await displayMovies(container, query, page, undefined, filters);
         loadMoreBtn.hidden = page * perPage >= total;
         page++;
     } catch (error) {
