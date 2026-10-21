@@ -18,6 +18,71 @@ body {
     align-items: flex-start;
 }
 
+ul {
+    list-style-type: none;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+a:hover, a:focus {
+    text-decoration: underline deeppink;
+}
+
+p {
+    max-width: 80ch;
+}
+
+button {
+    padding: 10px;
+    background-color: pink;
+    background-image: radial-gradient( ellipse at center, pink 50%, deeppink 100%);
+    border: 1px solid deeppink;
+    background-size: 200% 200%;
+    background-position: center;
+    border-radius: 8px;
+    transition: background-size 0.3s ease-in-out;
+}
+
+button:hover {
+    background-size: 100% 100%;
+}
+
+.listCard{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 1rem;
+}
+
+.listCard>li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+    border: 1px solid pink;
+    height: fit-content;
+    min-width: 80px;
+    max-width: 250px;
+}
+
+.listCard h3 {
+    margin-block: 10px;
+}
+
+.listCard img{
+    width: 100%;
+    border-radius: 15px;
+}
+
+.cardContent {
+    padding-inline: 10px;
+}
+
 @media screen and (min-width: 792px) {
     .container {
         padding-inline: 8rem;
@@ -27,7 +92,7 @@ body {
 
 /* #region *** HEADER *** */
 
-.headerNav {
+.headerNav, footer {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -39,7 +104,7 @@ body {
     order: -1;
 }
 
-.headerNav a {
+.headerNav a, footer a {
     display: flex;
     height: fit-content;
     padding: 0.1rem;
@@ -48,12 +113,16 @@ body {
     text-transform: uppercase;
 }
 
-.headerNav a:hover, .headerNav a:focus {
-    text-decoration: underline;
+.headerNav a:hover, .headerNav a:focus, footer a:hover, footer a:focus {
+    text-decoration: underline deeppink;
+}
+
+footer p {
+    text-align: center;
 }
 
 @media screen and (min-width: 792px) {
-    .headerNav {
+    .headerNav, footer {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
     }
@@ -73,10 +142,6 @@ body {
 
 /* #endregion *** HEADER *** */
 
-/* #region *** FOOTER *** */
-
-/* #endregion *** FOOTER *** */
-
 /* #endregion *** GENERAL *** */
 
 /* #region *** Page : INDEX *** */
@@ -86,37 +151,20 @@ body {
 /* #region *** Page : SEARCH *** */
 
 #searchBar {
-    border-radius: 5em;
-}
-
-.containerResults {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
-}
-
-.movieCard {
-    border : 1px solid deeppink;
-}
-
-.posterCard {
-    border : 10px solid pink;
-}
-
-.headerCard {
-    border : 1px solid pink;
-    color : blue;
-}
-
-.bodyCard {
-    border : 1px solid pink;
-}
-
-.hide {
-    display: none;
+    border-radius: 8px;
+    padding: 10px;
+    background-color: pink;
 }
 
 /* #endregion *** Page : SEARCH *** */
 
 /* #region *** Page : MOVIE *** */
+
+#movie .movieCard {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
 
 /* #endregion Page : MOVIE *** */
