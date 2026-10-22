@@ -1,1 +1,0 @@
-Ce projet a été réalisé par Clémentine LEROY et Victor FRANCHET.
