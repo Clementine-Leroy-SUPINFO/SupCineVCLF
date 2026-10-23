@@ -8,7 +8,7 @@ Ce projet a été développé en réponse à la consigne suivante : "Un cinéma 
 - **HTML** — structure des pages
 - **CSS** — mise en forme et mise en page
 - **JavaScript** — animation des pages
-- Hébergement en local et en ligne via GitHub : https://github.com/Clementine-Leroy-SUPINFO/SupCineVCLF
+- Hébergement en local et en ligne via GitHub : https://clementine-leroy-supinfo.github.io/SupCineVCLF/
 
 ## Fonctionnalités principales
 - **Page d'accueil** (`index.html`)
